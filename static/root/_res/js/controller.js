@@ -11,7 +11,6 @@ app.controller('rootCtrl', function ($scope,$rootScope,$state,ipCookie,rootSer,$
     }else {
         $scope.logined=true;
     }
-
     $scope.login = function(){
         var absurl = $location.absUrl();
         ipCookie('absurl', absurl,{ expires:3,expirationUnit: 'minutes' });
@@ -27,6 +26,7 @@ app.controller('rootCtrl', function ($scope,$rootScope,$state,ipCookie,rootSer,$
         })
     }
 });
+/*增加滚动条*/
 app.directive('resize', function ($window) {
     return function (scope,element) {
         var w = angular.element($window);

@@ -559,8 +559,11 @@ a:hover {
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
-
-
+.nav .secTwo .secOulTwo .oulShow svg {
+    fill: #b3aef5;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
 
 .nav .secTwo .secOulTwo li .navOul li {
     text-align: left;
@@ -653,7 +656,7 @@ header .rightTop .topRight a {
 }
 
 header .rightTop .topRight a svg {
-    width: 23%;
+    width: 20%;
     height: 23px;
     fill: #2f3140;
 }
@@ -668,6 +671,9 @@ header .rightTop .topRight span {
     font-family: "Arial", "Microsoft Himalaya";
     font-size: 1rem;
     color: #333333;
+}
+header .rightTop .topRight a:last-child span{
+    color: #636fe7;
 }
 
 header .rightNav {

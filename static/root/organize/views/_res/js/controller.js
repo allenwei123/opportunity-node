@@ -8,10 +8,15 @@ app.controller('viewsCtrl',function ($scope,$state) {
         $state.go('root.organize.views.nav');
     }
 }).controller('viewMenuCtrl',function($scope,$state,$rootScope,$location){
+    var active =$location.path().split('/')[3];
+    $scope.navCla=active?active:'views';
+    $scope.navClass= function(name){
+        $scope.navCla = name;
+    };
     var urlName = $state.current.url.split('/')[1].split('[')[0];
     $scope.menuClass=urlName+"Menu";
     $rootScope.$on('$locationChangeSuccess', function () {//url地扯改变或者刷新
-        if($location.path().split('/').slice(-1)=='list'){
+    if($location.path().split('/').slice(-1)=='list'){
             $scope.menuClass = 'listMenu';
         }
     });
@@ -25,7 +30,7 @@ app.controller('viewsCtrl',function ($scope,$state) {
     });
     $scope.delete = function(){
         if($scope.idList){
-            $state.go('root.customer.basicinfo.list.delete[12]',{id:$scope.idList});
+            $state.go('root.customer.basicinfo.list.delete[12]',        {id:$scope.idList});
         }
     };
     $scope.congeal = function(){
@@ -44,6 +49,11 @@ app.controller('viewsCtrl',function ($scope,$state) {
     };
     $scope.add = function(){
         $scope.menuClass = 'addMenu'
+    };
+    $scope.change = function(){
+        $scope.mag = 'navAble';
+      /* console.log(active);
+         console.log($scope.navCla);*/
     };
 });
 

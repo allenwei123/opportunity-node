@@ -1,22 +1,22 @@
 <!--内容表头导航-->
 <div class="contentTitle">
     <ul>
-        <li class="liSty" data-title="list-content" ui-sref=".list[12]">
+        <li ng-class="{'liSty':menuClass=='listMenu'}" ui-sref=".list[12]" ng-click="navClass('listMenu')">
             <a href="javascript:void (0)">列表</a>
         </li>
-        <li data-title="add" ui-sref=".add[12]">
+        <li ng-class="{'liSty':menuClass=='addMenu'}" ui-sref=".add[12]" ng-click="navClass('addMenu')">
             <a href="javascript:void (0)">添加</a>
         </li>
-        <li data-title="edit">
+        <li ng-class="{'liSty':menuClass=='editMenu'}" ui-sref=".edit[12]" ng-click="navClass('editMenu')">
             <a href="javascript:void (0)">编辑</a>
         </li>
-        <li data-title="delete">
+        <li ng-class="{'liSty':menuClass=='deleteMenu'}" ui-sref=".delete[12]" ng-click="navClass('deleteMenu')">
             <a href="javascript:void (0)">删除</a>
         </li>
-        <li data-title="close">
+        <li ng-class="{'liSty':menuClass=='closeMenu'}" ui-sref=".close[12]" ng-click="navClass('closeMenu')">
             <a href="javascript:void (0)">关闭</a>
         </li>
-        <li data-title="reset">
+        <li ng-class="{'liSty':menuClass=='resetMenu'}" ui-sref=".reset[12]" ng-click="navClass('resetMenu')">
             <a href="javascript:void (0)">重启</a>
         </li>
     </ul>

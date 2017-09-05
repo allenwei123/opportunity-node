@@ -9,10 +9,8 @@ app.controller('organizeCtrl', function ($scope,$state) {
     $scope.navClass= function(name){
        $scope.navCla=name
     };
-   $scope.date = [1,2,3,4,5,6,7,8,9];
-   /* $scope.data = ["深圳","广州","福建","上海","江苏","杭州","北京","广西"];
-    $scope.data1 = ["钦州","北海","南宁"];*/
-    $scope.data = [{name:"深圳",age:["钦州","北海","南宁"]},{name:"广州"},{name:"上海"},{name:"北京",age:["钦州","北海","南宁"]}];
+  /* $scope.date = [1,2,3,4,5,6,7,8,9];
+    $scope.data = [{name:"深圳",age:["钦州","北海","南宁"]},{name:"广州"},{name:"上海"},{name:"北京",age:["钦州","北海","南宁"]}];*/
     $scope.isSelected = true;
     $scope.home = function () {
         $scope.menuClass = 'homeMenu';
@@ -60,8 +58,22 @@ app.controller('organizeCtrl', function ($scope,$state) {
     $scope.centripetal = function () {
         $scope.menuClass = 'centripetalMenu';
     };
-
-
+        /*资质管理*/
+    $scope.aptitude = function () {
+        $scope.navClass = 'aptitudeMenu';
+    };
+    $scope.synopsis = function () {
+        $scope.navClass = 'synopsisMenu';
+    };
+    $scope.company = function () {
+        $scope.navClass = 'companyMenu';
+    };
+    $scope.organize = function () {
+        $scope.navClass = 'organizeMenu';
+    };
+    $scope.personnel = function () {
+        $scope.navClass = 'personnelMenu';
+    };
 });
 
 

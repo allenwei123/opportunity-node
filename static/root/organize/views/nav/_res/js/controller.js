@@ -12,6 +12,9 @@ app.controller('navsCtrl',function ($scope,$state) {
 }).controller('navsMenuCtrl',function($scope,$state,$rootScope,$location){
     var urlName = $state.current.url.split('/')[1].split('[')[0];
     $scope.menuClass=urlName+"Menu";
+    $scope.navClass= function(name){
+        $scope.menuClass = name;
+    };
     $rootScope.$on('$locationChangeSuccess', function () {//url地扯改变或者刷新
         if($location.path().split('/').slice(-1)=='list'){
             $scope.menuClass = 'listMenu';
@@ -23,7 +26,6 @@ app.controller('navsCtrl',function ($scope,$state) {
     });
     $scope.$on("getCustomer", function(event, num){
         $scope.customerNum = num;
-
     });
     $scope.delete = function(){
         if($scope.idList){

@@ -187,12 +187,11 @@ app.config(function ($provide, $urlRouterProvider) {
         titleClass: 'toast-title',
         toastClass: 'toast'
     });
-});;
+});
 
 app.factory('HttpInterceptor', ['$q', HttpInterceptor]);
 
 function HttpInterceptor($q,toastr){
-
     return {
         request : function(config){
             return config;

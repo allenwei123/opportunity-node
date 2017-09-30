@@ -83,7 +83,6 @@ function loadModule($ocLazyLoad, $urlRouter, moduleName, filter, fun) {
     });
 }
 
-
 app.config(function ($provide, $urlRouterProvider) {
     $urlRouterProvider.deferIntercept();
     $provide.decorator('$state', function ($delegate, $ocLazyLoad, $urlRouter) {//ui-router 渲染
@@ -188,9 +187,7 @@ app.config(function ($provide, $urlRouterProvider) {
         toastClass: 'toast'
     });
 });
-
 app.factory('HttpInterceptor', ['$q', HttpInterceptor]);
-
 function HttpInterceptor($q,toastr){
     return {
         request : function(config){
@@ -217,4 +214,4 @@ function HttpInterceptor($q,toastr){
             return $q.reject(err);
         }
     };
-};
+}

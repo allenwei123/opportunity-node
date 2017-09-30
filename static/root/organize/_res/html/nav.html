@@ -3,7 +3,7 @@
     <!--左边导航-->
     <div class="secOne">
         <ul class="secOul"  resize ng-style="style()">
-            <li ng-class="{'selected':menuClass=='homeMenu'}" ng-click="home()">
+            <li ng-class="{'selected':menuClass=='homeMenu'}" ng-click="home('系统首页')">
                 <a href="javascript:void(0)" class="boc">
                     <svg role="img" class="home">
                         <use xlink:href="#home"></use>
@@ -134,35 +134,35 @@
             </svg>
         </section>
         <ul class="secOulTwo">
-            <li ng-class="{'oulShow':navClass == 'aptitudeMenu'}" ng-click="aptitude()">
+            <li ng-class="{'oulShow':toggle1}" ng-click="toggle1 = !toggle1">
                 <span>资质管理</span>
                 <svg role="img" class="down">
                     <use xlink:href="#down"></use>
                 </svg>
             </li>
-            <li ng-class="{'oulShow':navClass == 'synopsisMenu'}" ng-click="synopsis()">
+            <li ng-class="{'oulShow':toggle2}" ng-click="toggle2= !toggle2">
                 <span>简介管理</span>
                 <svg role="img" class="down">
                     <use xlink:href="#down"></use>
                 </svg>
             </li>
-            <li ng-class="{'oulShow':navClass == 'companyMenu'}" ng-click="company()">
+            <li ng-class="{'oulShow':toggle3}" ng-click="toggle3= !toggle3">
                 <span>企业文化</span>
                 <svg role="img" class="down">
                     <use xlink:href="#down"></use>
                 </svg>
             </li>
-            <li ng-class="{'oulShow':navClass == 'organizeMenu'}" ng-click="organize()">
+            <li ng-class="{'oulShow':toggle4}" ng-click="toggle4 = !toggle4">
                 <span>组织结构</span>
                 <svg role="img" class="down">
                     <use xlink:href="#down"></use>
                 </svg>
-                <ul class="navOul" ng-show="navClass == 'organizeMenu'">
-                    <li class="{'colorSty':li== ''}">组织结构</li>
-                    <li>组织结构管理</li>
+                <ul class="navOul" ng-show="toggle4" ng-click="hideDaf($event)">
+                    <li ng-class="{'changes-clo':changMenu == 'orgMenu'}" ng-click="masClass('orgMenu')">组织结构</li>
+                    <li ng-class="{'changes-clo':changMenu == 'masMenu'}" ng-click="masClass('masMenu')">组织结构管理</li>
                 </ul>
             </li>
-            <li ng-class="{'oulShow':navClass == 'personnelMenu'}" ng-click="personnel()">
+            <li ng-class="{'oulShow':toggle5}" ng-click="toggle5 = !toggle5 ">
                 <span>人员编制</span>
                 <svg role="img" class="down">
                     <use xlink:href="#down"></use>

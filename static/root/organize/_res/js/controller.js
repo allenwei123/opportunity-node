@@ -4,16 +4,27 @@ app.controller('organizeCtrl', function ($scope,$state) {
         $state.go('root.organize.views');
     }
 }).controller('navCtrl',function($scope,$state,$location){
-    var active =$location.path().split('/')[4];
+  /*  var active =$location.path().split('/')[4];
+    console.log($location.path().split('/')[1]);
     $scope.navCla=active?active:'views';
     $scope.navClass= function(name){
        $scope.navCla=name
+    };*/
+
+/*    $scope.isSelected = true;*/
+    //左边导航变色
+    $scope.menuClass = 'knowMenu';
+    $scope.hideDaf = function ($event) {
+        $event.stopPropagation();
     };
-  /* $scope.date = [1,2,3,4,5,6,7,8,9];
-    $scope.data = [{name:"深圳",age:["钦州","北海","南宁"]},{name:"广州"},{name:"上海"},{name:"北京",age:["钦州","北海","南宁"]}];*/
-    $scope.isSelected = true;
-    $scope.home = function () {
+    //中间导航变色
+    $scope.changMenu='masMenu';
+    $scope.masClass= function(color){
+        $scope.changMenu=color;
+    };
+    $scope.home = function (name) {
         $scope.menuClass = 'homeMenu';
+        console.log(name);
     };
     $scope.notice = function () {
         $scope.menuClass = 'noticeMenu';
@@ -51,7 +62,6 @@ app.controller('organizeCtrl', function ($scope,$state) {
     $scope.accounting = function () {
         $scope.menuClass = 'accountingMenu';
     };
-
     $scope.follow = function () {
         $scope.menuClass = 'followMenu';
     };
@@ -61,6 +71,9 @@ app.controller('organizeCtrl', function ($scope,$state) {
         /*资质管理*/
     $scope.aptitude = function () {
         $scope.navClass = 'aptitudeMenu';
+        if( $scope.navClass == 'aptitudeMenu'){
+            $scope.oulShow = false;
+        }
     };
     $scope.synopsis = function () {
         $scope.navClass = 'synopsisMenu';
@@ -74,6 +87,13 @@ app.controller('organizeCtrl', function ($scope,$state) {
     $scope.personnel = function () {
         $scope.navClass = 'personnelMenu';
     };
+    $scope.toggle = false;
+    $scope.toggle4 = false;
+    
+    $scope.toggle4  = function () {
+        /*alert('111')*/
+    }
+
 });
 
 

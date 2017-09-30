@@ -1,15 +1,13 @@
-$(document).ready(function () {
+$(document).ready(function (){
     //左边点击导航变色
     $('.secOul li').on('click',function () {
         $(this).addClass('change-svg').siblings().removeClass('change-svg');
     });
-
 //点击中间导航下拉换向 隐藏的ol显示
     $('.secOulTwo li').on('click',function () {
         $(this).toggleClass('nav-change').siblings().removeClass('nav-change');
         $(this).children('.navOul').toggleClass('showEle').parents(this).siblings().children('.navOul').removeClass('showEle');
     });
-
 //点击中间导航下拉换向 li中的字体变色
     $('.navOul li').click(function () {
         event.stopPropagation();
@@ -26,7 +24,6 @@ $(document).ready(function () {
         var listTitle = $(this).attr("data-title");
         $(this).parents('section').find('.'+listTitle).show().siblings().hide();
     });
-
     /*点击勾选*/
     $(".checked-none").each(function(i){
         $(this).attr({"id":"checked"+i});

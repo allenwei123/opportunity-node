@@ -26,6 +26,7 @@ app.controller('rootCtrl', function ($scope,$rootScope,$state,ipCookie,rootSer,$
         })
     }
 });
+
 /*增加滚动条*/
 app.directive('resize', function ($window) {
     return function (scope,element) {

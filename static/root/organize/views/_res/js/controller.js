@@ -5,9 +5,13 @@ var app = angular.module('views', [{
 }]);
 app.controller('viewsCtrl',function ($scope,$state) {
     if ($state.current.url == '/views') {//默认加载列表
-        $state.go('root.organize.views.nav');
+        $state.go('root.organize.views.range');
     }
-}).controller('viewMenuCtrl',function($scope,$state,$rootScope,$location){
+    //父 Ctrl 监听到事件，向下广播
+    $scope.$on('changeDirection',function(event,dir){
+        $scope.$broadcast('listDirection',dir)
+    });
+}).controller('viewMenuCtrl',function($scope,$state,$rootScope,$location,ipCookie){
     var active =$location.path().split('/')[3];
     $scope.navCla=active?active:'views';
     $scope.navClass= function(name){
@@ -26,34 +30,14 @@ app.controller('viewsCtrl',function ($scope,$state) {
     });
     $scope.$on("getCustomer", function(event, num){
         $scope.customerNum = num;
-
     });
-    $scope.delete = function(){
-        if($scope.idList){
-            $state.go('root.customer.basicinfo.list.delete[12]',        {id:$scope.idList});
-        }
+
+    $scope.login = function(){
+        var absurl = $location.absUrl();
+        ipCookie('absurl', absurl,{ expires:3,expirationUnit: 'minutes' });
+        location.href="http://localhost/login";//部署到线上时要改为登录域名
     };
-    $scope.congeal = function(){
-        if($scope.idList){
-            $state.go('root.customer.basicinfo.list.congeal[12]',{id:$scope.idList});
-        }
-    };
-    $scope.edit = function(){
-        if($scope.customerNum){
-            $state.go('root.customer.basicinfo.edit[12]',{cusNum:$scope.customerNum});
-            $scope.menuClass = 'editMenu'
-        }
-    };
-    $scope.list = function(){
-        $scope.menuClass = 'listMenu'
-    };
-    $scope.add = function(){
-        $scope.menuClass = 'addMenu'
-    };
-    $scope.change = function(){
-        $scope.mag = 'navAble';
-      /* console.log(active);
-         console.log($scope.navCla);*/
-    };
+
+
 });
 
